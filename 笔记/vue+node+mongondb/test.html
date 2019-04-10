@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>hello</title>
+    <style>
+        table.gridtable {
+            font-family: 'simsun';
+            font-size: 12px;
+            color: #333333;
+            border-width: 1px;
+            border-collapse: collapse;
+        }
+
+        table.gridtable th {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #d9d9d9;
+            font-weight: normal;
+            color: #ffffff;
+        }
+
+        table.gridtable td {
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #d9d9d9;
+        }
+
+        th {
+            text-align: center;
+            font-weight: normal;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        table.gridtable tr:nth-child(2n+1) {
+            background-color: #fff;
+        }
+
+        table.gridtable tr:nth-child(2n) {
+            background-color: #f7f7f7;
+        }
+
+        .title-item {
+            background-color: #D35353;
+        }
+
+    </style>
+</head>
+<body>
+<table width="1000px" style="margin:0 0;text-align:center;">
+    <tr>
+        <td align="center" style="font-weight:bold; ">
+            &nbsp;
+        </td>
+    </tr>
+    <tr>
+        <td align="center" style="font-weight:bold;">短信平台2018-05-01 00:00:00-2019-02-25 00:00:00发送状态统计</td>
+    </tr>
+</table>
+
+<table class="gridtable" width="900px" style="margin:0 0;text-align:center;border:1px solid #000;" cellspacing="0">
+    <thead>
+    <tr>
+        <th class="title-item" width="225px">状态类型</th>
+        <th class="title-item" width="225px">条数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>32</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>BLACK</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>DaoFa</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>GongJi</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>UNDELIV</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOSEND</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>DELIVRD</td>
+        <td>12</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

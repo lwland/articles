@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+</head>
+
+<body>
+    <input type="text" id="userName" />
+    <br>
+    <span id="uName"></span>
+    <script>
+        var obj = {
+            pwd: "123456"
+        };
+        Object.defineProperty(obj, "userName", {
+            // value:"Jack"
+            get: function () {
+                console.log("get userName")
+            },
+            set: function (value) {
+                console.log("set userName="+value)
+                document.getElementById("uName").innerText = value;
+            }
+        });
+        document.getElementById("userName").addEventListener("keyup", function () {
+            obj.userName=event.target.value;
+        })
+    </script>
+</body>
+
+</html>
