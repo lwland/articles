@@ -1,0 +1,45 @@
+https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
+安装ffmpeg
+sudo yum install epel-release -y
+sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
+sudo yum install ffmpeg ffmpeg-devel -y
+ffmpeg的参数
+-aframes number (output)：设置输出文件的音频帧的数目
+Set the number of audio frames to output. This is an obsolete alias for -frames:a, which you should use instead.
+
+-ar[:stream_specifier] freq (input/output,per-stream)：设置输出文件的采样频率
+Set the audio sampling frequency. For output streams it is set by default to the frequency of the corresponding input stream. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options.
+
+-aq q (output) 设置音频质量
+Set the audio quality (codec-specific, VBR). This is an alias for -q:a.
+
+-ac[:stream_specifier] channels (input/output,per-stream) 设置声道
+Set the number of audio channels. For output streams it is set by default to the number of input audio channels. For input streams this option only makes sense for audio grabbing devices and raw demuxers and is mapped to the corresponding demuxer options.
+
+-an (input/output)
+As an input option, blocks all audio streams of a file from being filtered or being automatically selected or mapped for any output. See -discard option to disable streams individually.
+
+As an output option, disables audio recording i.e. automatic selection or mapping of any audio stream. For full manual control see the -map option.
+
+-acodec codec (input/output)：设置音频解码器
+Set the audio codec. This is an alias for -codec:a.
+-sample_fmt[:stream_specifier] sample_fmt (output,per-stream)：设置音频样本格式
+Set the audio sample format. Use -sample_fmts to get a list of supported sample formats.
+-af filtergraph (output)：设置滤波图
+Create the filtergraph specified by filtergraph and use it to filter the stream.
+This is an alias for -filter:a, see the -filter option.
+-i: 表示输入的音频或视频
+
+-ac: channel 设置通道3, 默认为1
+
+-ar: sample rate 设置音频采样率
+
+-acodec: 使用codec编解码
+
+-ab: bitrate 设置音频码率
+
+-vn: 不做视频记录
+
+//fmedia --record -o rec.wav --format=int24 --channels=mono --rate=48000
+ffmpeg -i test1.mp3 -ar 8000 -ac 1 8k.mp3
